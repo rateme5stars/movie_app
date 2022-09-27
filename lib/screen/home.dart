@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
               SizedBox(
                 height: 650,
                 child: Image.network(
-                  '${ApiConstant.baseImgUrl}${state.movies[1].posterPath}',
+                  '${ApiConstant.baseImgUrl}${state.movies[0].posterPath}',
                   fit: BoxFit.cover,
                 ),
               ),

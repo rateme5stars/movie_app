@@ -1,11 +1,11 @@
-import 'package:movie_app/model/movie_model.dart';
+import 'package:movie_app/model/popular_movie_model.dart';
 
 abstract class HomeState {}
 
 class LoadingMovie extends HomeState {}
 
 class GetMovieSuccess extends HomeState {
-  final List<Movie> movies;
+  final List<PopularMovie> movies;
   GetMovieSuccess(this.movies);
 }
 

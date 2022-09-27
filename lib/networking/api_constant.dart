@@ -6,6 +6,6 @@ class ApiConstant {
   static const int PAGE_SIZE = 20;
   static const String baseUrl = "api.themoviedb.org";
   static const String baseImgUrl = "https://image.tmdb.org/t/p/original";
-  static const String GET_MOVIE = "/3/movie/popular";
+  static const String GET_POPULAR_MOVIE = "/3/movie/popular";
   static const String GET_UPCOMING_MOVIE = "/3/movie/upcoming";
 }

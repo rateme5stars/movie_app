@@ -1,4 +1,4 @@
-class Movie {
+class PopularMovie {
   String? posterPath;
   bool? adult;
   String overview;
@@ -14,7 +14,7 @@ class Movie {
   bool video;
   num voteAverage;
 
-  Movie({
+  PopularMovie({
     this.posterPath,
     this.adult,
     this.overview = '',
@@ -32,7 +32,7 @@ class Movie {
   });
 
   // Named constructor with factory keyword
-  factory Movie.fromJson(Map<String, dynamic> json) => Movie(
+  factory PopularMovie.fromJson(Map<String, dynamic> json) => PopularMovie(
         posterPath: json["poster_path"],
         adult: json["adult"],
         overview: json["overview"],

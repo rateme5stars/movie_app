@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:movie_app/support/nav_bottom_bar.dart';
 import 'package:movie_app/bloc/home_cubit.dart';
-import 'package:movie_app/networking/home_repository.dart';
+import 'package:movie_app/networking/remote_repository.dart';
 import 'package:movie_app/screen/coming_soon.dart';
 import 'package:movie_app/screen/download.dart';
 import 'package:movie_app/screen/home.dart';

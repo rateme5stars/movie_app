@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart';
-import 'package:movie_app/model/movie_model.dart';
+import 'package:movie_app/model/popular_movie_model.dart';
 import 'package:movie_app/networking/api_constant.dart';
 
 mixin HomeRepository {
-  Future<List<Movie>> getListMovie(int page);
+  Future<List<PopularMovie>> getListMovie(int page);
 }
 
 class HomeRepositoryImpl implements HomeRepository {
@@ -12,8 +12,8 @@ class HomeRepositoryImpl implements HomeRepository {
   HomeRepositoryImpl(this.client);
 
   @override
-  Future<List<Movie>> getListMovie(int page) async {
-    final List<Movie> result = [];
+  Future<List<PopularMovie>> getListMovie(int page) async {
+    final List<PopularMovie> result = [];
 
     final queryParameter = {
       "api_key": ApiConstant.apiKey,
@@ -34,7 +34,7 @@ class HomeRepositoryImpl implements HomeRepository {
       final jsonResult = json['results'];
 
       result.addAll(List.from(jsonResult as List<dynamic>)
-          .map((e) => Movie.fromJson(e))
+          .map((e) => PopularMovie.fromJson(e))
           .toList());
     }
     return result;
