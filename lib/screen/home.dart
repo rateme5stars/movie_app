@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
           return const SpinKitCircle(
             color: Colors.white,
           );
-        } else if (state is GetMovieSuccess) {
+        } else if (state is GetPopularMovieSuccess) {
           return Scaffold(
             backgroundColor: Colors.black,
             body: getBody(context, state, size),
@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
               SizedBox(
                 height: 650,
                 child: Image.network(
-                  '${ApiConstant.baseImgUrl}${state.movies[0].posterPath}',
+                  '${ApiConstant.baseImgUrl}${state.popularMovies[0].posterPath}',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -239,14 +239,14 @@ class Home extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: List.generate(state.movies.length, (idx) {
+              children: List.generate(state.popularMovies.length, (idx) {
                 return Container(
                     margin: const EdgeInsets.only(right: 8),
                     height: 160,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.network(
-                          '${ApiConstant.baseImgUrl}${state.movies[idx].posterPath}'),
+                          '${ApiConstant.baseImgUrl}${state.popularMovies[idx].posterPath}'),
                     ));
               }),
             ),

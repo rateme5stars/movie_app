@@ -4,18 +4,12 @@ abstract class HomeState {}
 
 class LoadingMovie extends HomeState {}
 
-class GetMovieSuccess extends HomeState {
-  final List<PopularMovie> movies;
-  GetMovieSuccess(this.movies);
+class GetPopularMovieSuccess extends HomeState {
+  final List<PopularMovie> popularMovies;
+  GetPopularMovieSuccess(this.popularMovies);
 }
 
-class GetMovieFail extends HomeState {
+class GetPopularMovieFail extends HomeState {
   final String message;
-  GetMovieFail(this.message);
+  GetPopularMovieFail(this.message);
 }
-
-
-// class GetUpcomingMovieSuccess extends HomeState {
-//   final List<Movie> movies;
-//   GetMovieSuccess(this.movies);
-// }

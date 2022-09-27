@@ -29,7 +29,7 @@ class _RootScreenState extends State<RootScreen> {
     return IndexedStack(
       index: activeTabIdx,
       children: [
-        Home(cubit: HomeCubit(HomeRepositoryImpl(Client()))),
+        Home(cubit: HomeCubit(RemoteRepositoryImpl(Client()))),
         const ComingSoon(),
         const Download(),
       ],
@@ -53,20 +53,24 @@ class _RootScreenState extends State<RootScreen> {
                     activeTabIdx = idx;
                   });
                 },
-                child: Column(
-                  children: [
-                    Icon(
-                      items[idx]['icon'],
-                      color: activeTabIdx == idx ? Colors.white : Colors.grey,
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      items[idx]['text'],
-                      style: TextStyle(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: Column(
+                    children: [
+                      Icon(
+                        items[idx]['icon'],
                         color: activeTabIdx == idx ? Colors.white : Colors.grey,
                       ),
-                    )
-                  ],
+                      const SizedBox(height: 5),
+                      Text(
+                        items[idx]['text'],
+                        style: TextStyle(
+                          color:
+                              activeTabIdx == idx ? Colors.white : Colors.grey,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               );
             },

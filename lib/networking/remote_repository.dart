@@ -3,16 +3,16 @@ import 'package:http/http.dart';
 import 'package:movie_app/model/popular_movie_model.dart';
 import 'package:movie_app/networking/api_constant.dart';
 
-mixin HomeRepository {
-  Future<List<PopularMovie>> getListMovie(int page);
+mixin RemoteRepository {
+  Future<List<PopularMovie>> getPopularMovies(int page);
 }
 
-class HomeRepositoryImpl implements HomeRepository {
+class RemoteRepositoryImpl implements RemoteRepository {
   final Client client;
-  HomeRepositoryImpl(this.client);
+  RemoteRepositoryImpl(this.client);
 
   @override
-  Future<List<PopularMovie>> getListMovie(int page) async {
+  Future<List<PopularMovie>> getPopularMovies(int page) async {
     final List<PopularMovie> result = [];
 
     final queryParameter = {

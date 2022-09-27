@@ -4,15 +4,14 @@ import 'package:movie_app/model/popular_movie_model.dart';
 import 'package:movie_app/networking/remote_repository.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  final HomeRepositoryImpl remoteRepo;
+  final RemoteRepositoryImpl remoteRepo;
 
   HomeCubit(this.remoteRepo) : super(LoadingMovie()) {
-    getListMovie();
+    getPopularMovies();
   }
 
-  Future<void> getListMovie() async {
-    final List<PopularMovie> result = await remoteRepo.getListMovie(1);
-
-    emit(GetMovieSuccess(result));
+  Future<void> getPopularMovies() async {
+    final List<PopularMovie> result = await remoteRepo.getPopularMovies(1);
+    emit(GetPopularMovieSuccess(result));
   }
 }
