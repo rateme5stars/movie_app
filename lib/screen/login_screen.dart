@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/theme/theme.dart';
 import 'package:movie_app/widget/text_field.dart';
 
-class RootApp extends StatefulWidget {
-  const RootApp({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<RootApp> createState() => _RootAppState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RootAppState extends State<RootApp> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -22,7 +22,11 @@ class HomeRepositoryImpl implements HomeRepository {
     };
 
     final response = await client.get(
-      Uri.https(ApiConstant.baseUrl, ApiConstant.GET_MOVIE, queryParameter),
+      Uri.https(
+        ApiConstant.baseUrl,
+        ApiConstant.GET_UPCOMING_MOVIE,
+        queryParameter,
+      ),
     );
 
     if (response.statusCode == 200) {
