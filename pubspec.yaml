@@ -36,8 +36,8 @@ dependencies:
   flutter_bloc: ^8.1.1
   http: ^0.13.5
   video_player: ^2.4.7
-  flutter_icons: ^1.1.0
   flutter_spinkit: ^5.1.0
+  queue: ^3.1.0+1
 
 dev_dependencies:
   flutter_test:

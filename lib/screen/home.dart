@@ -239,18 +239,22 @@ class Home extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: List.generate(state.popularMovies.length, (idx) {
-                return Container(
+              children: List.generate(
+                state.popularMovies.length,
+                (idx) {
+                  return Container(
                     margin: const EdgeInsets.only(right: 8),
                     height: 160,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.network(
                           '${ApiConstant.baseImgUrl}${state.popularMovies[idx].posterPath}'),
-                    ));
-              }),
+                    ),
+                  );
+                },
+              ),
             ),
-          )
+          ),
         ],
       ),
     );
